@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^PhotoCellCloseButtonActionBlock)();
+
 @interface PhotoCollectionViewCell : UICollectionViewCell
 
 @property (weak) IBOutlet UIImageView *imgPhoto;
 @property (weak) IBOutlet UIButton *btnRemovePhoto;
+
+@property (copy) PhotoCellCloseButtonActionBlock actionBlock;
 
 - (IBAction)removePhoto:(id)sender;
 

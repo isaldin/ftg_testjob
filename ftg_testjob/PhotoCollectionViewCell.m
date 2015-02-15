@@ -10,8 +10,8 @@
 
 @implementation PhotoCollectionViewCell
 
-
-
-- (IBAction)removePhoto:(id)sender {
+- (IBAction)removePhoto:(id)sender
+{
+    self.actionBlock();
 }
 @end

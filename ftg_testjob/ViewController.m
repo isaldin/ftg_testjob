@@ -105,6 +105,10 @@
     PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCellReuseID" forIndexPath:indexPath];
     
     cell.imgPhoto.image = self.arrPickedPhotos[indexPath.row];
+    cell.actionBlock = ^{
+        [self.arrPickedPhotos removeObjectAtIndex:indexPath.row];
+        [self.collectionPhotos reloadData];
+    };
     return cell;
     
 }
