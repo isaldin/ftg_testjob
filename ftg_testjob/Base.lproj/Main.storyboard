@@ -94,6 +94,12 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фотографии" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6e-Sb-uxg">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cm-Jz-btF">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <state key="normal" title="Изменить">
@@ -103,6 +109,12 @@
                                                     <action selector="changeAvatar:" destination="i6I-bG-mKu" eventType="touchUpInside" id="gwn-Jz-ZOk"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAb-nd-bU2">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal" title="Добавить">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -111,14 +123,18 @@
                                             <constraint firstItem="eGk-mz-Hy7" firstAttribute="baseline" secondItem="zhY-f6-WQC" secondAttribute="baseline" id="DKy-Zv-sVB"/>
                                             <constraint firstItem="jQ2-31-cbw" firstAttribute="centerY" secondItem="zhY-f6-WQC" secondAttribute="centerY" id="FUp-xP-evx"/>
                                             <constraint firstAttribute="trailing" secondItem="eGk-mz-Hy7" secondAttribute="trailing" constant="8" id="FgK-v1-JCP"/>
+                                            <constraint firstAttribute="trailing" secondItem="gAb-nd-bU2" secondAttribute="trailing" constant="8" id="KvI-CE-EHx"/>
                                             <constraint firstItem="zhY-f6-WQC" firstAttribute="leading" secondItem="jQ2-31-cbw" secondAttribute="trailing" constant="8" symbolic="YES" id="MnW-dO-C5m">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="18"/>
                                             </constraint>
+                                            <constraint firstItem="v6e-Sb-uxg" firstAttribute="top" secondItem="jQ2-31-cbw" secondAttribute="bottom" constant="8" id="P6D-az-7rB"/>
                                             <constraint firstItem="jQ2-31-cbw" firstAttribute="leading" secondItem="Dhb-Mb-Ys9" secondAttribute="leading" constant="8" id="TQa-xE-CFh"/>
                                             <constraint firstAttribute="trailing" secondItem="REy-wN-hCT" secondAttribute="trailing" constant="8" id="Wth-UM-FRR"/>
                                             <constraint firstItem="eGk-mz-Hy7" firstAttribute="leading" secondItem="4cm-Jz-btF" secondAttribute="trailing" constant="10" id="agP-eh-pYn"/>
+                                            <constraint firstItem="v6e-Sb-uxg" firstAttribute="leading" secondItem="Dhb-Mb-Ys9" secondAttribute="leading" constant="8" id="krD-Gz-VIc"/>
                                             <constraint firstItem="eGk-mz-Hy7" firstAttribute="baseline" secondItem="4cm-Jz-btF" secondAttribute="baseline" id="rZs-Zb-LJi"/>
                                             <constraint firstItem="REy-wN-hCT" firstAttribute="leading" secondItem="Dhb-Mb-Ys9" secondAttribute="leading" constant="8" id="swm-Xb-zRw"/>
+                                            <constraint firstItem="gAb-nd-bU2" firstAttribute="centerY" secondItem="v6e-Sb-uxg" secondAttribute="centerY" constant="4.5" id="teO-5L-Fac"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
@@ -126,7 +142,9 @@
                                                 <exclude reference="jQ2-31-cbw"/>
                                                 <exclude reference="eGk-mz-Hy7"/>
                                                 <exclude reference="zhY-f6-WQC"/>
+                                                <exclude reference="v6e-Sb-uxg"/>
                                                 <exclude reference="4cm-Jz-btF"/>
+                                                <exclude reference="gAb-nd-bU2"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="93M-zX-J8d"/>
@@ -136,10 +154,14 @@
                                                 <exclude reference="FUp-xP-evx"/>
                                                 <exclude reference="TQa-xE-CFh"/>
                                                 <exclude reference="MnW-dO-C5m"/>
+                                                <exclude reference="P6D-az-7rB"/>
+                                                <exclude reference="krD-Gz-VIc"/>
                                                 <exclude reference="DKy-Zv-sVB"/>
                                                 <exclude reference="FgK-v1-JCP"/>
                                                 <exclude reference="agP-eh-pYn"/>
                                                 <exclude reference="rZs-Zb-LJi"/>
+                                                <exclude reference="KvI-CE-EHx"/>
+                                                <exclude reference="teO-5L-Fac"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -148,7 +170,9 @@
                                                 <include reference="jQ2-31-cbw"/>
                                                 <include reference="eGk-mz-Hy7"/>
                                                 <include reference="zhY-f6-WQC"/>
+                                                <include reference="v6e-Sb-uxg"/>
                                                 <include reference="4cm-Jz-btF"/>
+                                                <include reference="gAb-nd-bU2"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="93M-zX-J8d"/>
@@ -158,10 +182,14 @@
                                                 <include reference="FUp-xP-evx"/>
                                                 <include reference="TQa-xE-CFh"/>
                                                 <include reference="MnW-dO-C5m"/>
+                                                <include reference="P6D-az-7rB"/>
+                                                <include reference="krD-Gz-VIc"/>
                                                 <include reference="DKy-Zv-sVB"/>
                                                 <include reference="FgK-v1-JCP"/>
                                                 <include reference="agP-eh-pYn"/>
                                                 <include reference="rZs-Zb-LJi"/>
+                                                <include reference="KvI-CE-EHx"/>
+                                                <include reference="teO-5L-Fac"/>
                                             </mask>
                                         </variation>
                                     </view>
