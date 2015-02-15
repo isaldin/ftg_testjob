@@ -33,12 +33,9 @@
     return self;
 }
 
-- (void)postEventInfo:(NSDictionary *)params
+- (void)postEventInfoWithParams:(NSDictionary *)params andSuccessHandler:(APIClientFetchSuccessHandler)postEventSuccessHandler
 {
-    [self POST:@"event" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-        int i = 0;
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        int i = 0;
+    [self POST:@"event" parameters:params success:postEventSuccessHandler failure:^(NSURLSessionDataTask *task, NSError *error) {
     }];
 }
 @end

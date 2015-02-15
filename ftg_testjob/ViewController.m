@@ -141,7 +141,10 @@
                                      @"privacy" : @"all"
                                  }};
     
-    [[APIClient sharedClient] postEventInfo:params];
+    [[APIClient sharedClient] postEventInfoWithParams:params andSuccessHandler:^(NSURLSessionDataTask *task, id responseObject) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"response" message:[responseObject description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }];
 }
 
 #pragma mark --

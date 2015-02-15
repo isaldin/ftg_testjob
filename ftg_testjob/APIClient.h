@@ -10,11 +10,14 @@
 
 #import "AFHTTPSessionManager.h"
 
+typedef void(^APIClientFetchSuccessHandler)(NSURLSessionDataTask *task, id responseObject);
+typedef void(^APIClientFetchFailureHandler)(NSURLSessionDataTask *task, NSError *error);
+
 @interface APIClient : AFHTTPSessionManager
 
 + (id)sharedClient;
 - (id)init;
 
-- (void)postEventInfo:(NSDictionary *)params;
+- (void)postEventInfoWithParams:(NSDictionary *)params andSuccessHandler:(APIClientFetchSuccessHandler)postEventSuccessHandler;
 
 @end
