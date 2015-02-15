@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate>
 
+
+@property (weak) IBOutlet UITextField *txtName;
+@property (weak) IBOutlet UIImageView *imgAvatar;
+
+- (IBAction)deleteAvatar:(id)sender;
+- (IBAction)changeAvatar:(id)sender;
 
 @end
 

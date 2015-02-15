@@ -81,6 +81,7 @@
 		AC019A451A90C70D008622F9 /* ftg_testjob */ = {
 			isa = PBXGroup;
 			children = (
+				AC019A6C1A90E876008622F9 /* Models */,
 				AC019A4A1A90C70D008622F9 /* AppDelegate.h */,
 				AC019A4B1A90C70D008622F9 /* AppDelegate.m */,
 				AC019A4D1A90C70D008622F9 /* ViewController.h */,
@@ -117,6 +118,13 @@
 				AC019A611A90C70D008622F9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC019A6C1A90E876008622F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
