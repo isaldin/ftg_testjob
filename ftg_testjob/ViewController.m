@@ -142,8 +142,18 @@
                                  }};
     
     [[APIClient sharedClient] postEventInfoWithParams:params andSuccessHandler:^(NSURLSessionDataTask *task, id responseObject) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"response" message:[responseObject description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"response" message:[responseObject description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alert show];
+        
+        if(!self.imgAvatar.image){
+            return;
+        }
+        
+        [[APIClient sharedClient] postImage:self.imgAvatar.image forEventWithId:3 andSuccessHandler:^(NSURLSessionDataTask *task, id responseObject) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"response" message:[responseObject description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+
+        }];
     }];
 }
 

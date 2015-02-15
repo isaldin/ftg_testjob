@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "AFHTTPSessionManager.h"
+#import "AFHTTPRequestOperation.h"
 
 typedef void(^APIClientFetchSuccessHandler)(NSURLSessionDataTask *task, id responseObject);
 typedef void(^APIClientFetchFailureHandler)(NSURLSessionDataTask *task, NSError *error);
@@ -19,5 +20,7 @@ typedef void(^APIClientFetchFailureHandler)(NSURLSessionDataTask *task, NSError 
 - (id)init;
 
 - (void)postEventInfoWithParams:(NSDictionary *)params andSuccessHandler:(APIClientFetchSuccessHandler)postEventSuccessHandler;
+
+- (void)postImage:(UIImage *)image forEventWithId:(int)eventId andSuccessHandler:(APIClientFetchSuccessHandler)postEventSuccessHandler;
 
 @end

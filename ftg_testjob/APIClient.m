@@ -38,4 +38,17 @@
     [self POST:@"event" parameters:params success:postEventSuccessHandler failure:^(NSURLSessionDataTask *task, NSError *error) {
     }];
 }
+
+- (void)postImage:(UIImage *)image forEventWithId:(int)eventId andSuccessHandler:(APIClientFetchSuccessHandler)postEventSuccessHandler
+{
+    NSString *url = [NSString stringWithFormat:@"event/%d/image", eventId];
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+    
+    [self POST:url parameters:@{} constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"photo" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+    } success:postEventSuccessHandler
+       failure:^(NSURLSessionDataTask *task, NSError *error) {
+           NSLog(@"post image for event error");
+    }];
+}
 @end
