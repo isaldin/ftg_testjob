@@ -17,5 +17,7 @@
 - (IBAction)deleteAvatar:(id)sender;
 - (IBAction)changeAvatar:(id)sender;
 
+- (IBAction)addPhoto:(id)sender;
+
 @end
 
