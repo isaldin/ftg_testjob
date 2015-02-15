@@ -118,6 +118,81 @@
                                                     <action selector="addPhoto:" destination="i6I-bG-mKu" eventType="touchUpInside" id="qCi-Go-ngb"/>
                                                 </connections>
                                             </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="68z-L1-1X2" userLabel="Photos Collection View">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <color key="backgroundColor" red="0.7843137255" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="106" id="Kwi-bH-y8g"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MCc-AT-KB6">
+                                                    <size key="itemSize" width="147" height="106"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCellReuseID" id="6DJ-OV-OmJ" customClass="PhotoCollectionViewCell">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="106"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NEZ-Kc-wkZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="106"/>
+                                                                    </variation>
+                                                                </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnE-W2-HHG" userLabel="btnRemove">
+                                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                                    <state key="normal" title="[X]">
+                                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </state>
+                                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                        <rect key="frame" x="122" y="3" width="22" height="25"/>
+                                                                    </variation>
+                                                                    <connections>
+                                                                        <action selector="removePhoto:" destination="6DJ-OV-OmJ" eventType="touchUpInside" id="M6H-5f-4fY"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <variation key="default">
+                                                            <mask key="subviews">
+                                                                <exclude reference="NEZ-Kc-wkZ"/>
+                                                                <exclude reference="VnE-W2-HHG"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <mask key="subviews">
+                                                                <include reference="NEZ-Kc-wkZ"/>
+                                                                <include reference="VnE-W2-HHG"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <outlet property="btnRemovePhoto" destination="VnE-W2-HHG" id="WH6-zg-CQZ"/>
+                                                            <outlet property="imgPhoto" destination="NEZ-Kc-wkZ" id="XuS-Mx-Zih"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Kwi-bH-y8g"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="Kwi-bH-y8g"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="i6I-bG-mKu" id="vsM-2j-6fg"/>
+                                                    <outlet property="delegate" destination="i6I-bG-mKu" id="L2g-lF-hVl"/>
+                                                </connections>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -130,11 +205,14 @@
                                             <constraint firstItem="zhY-f6-WQC" firstAttribute="leading" secondItem="jQ2-31-cbw" secondAttribute="trailing" constant="8" symbolic="YES" id="MnW-dO-C5m">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="18"/>
                                             </constraint>
+                                            <constraint firstItem="68z-L1-1X2" firstAttribute="top" secondItem="v6e-Sb-uxg" secondAttribute="bottom" constant="8" id="O2f-1S-lkF"/>
                                             <constraint firstItem="v6e-Sb-uxg" firstAttribute="top" secondItem="jQ2-31-cbw" secondAttribute="bottom" constant="8" id="P6D-az-7rB"/>
                                             <constraint firstItem="jQ2-31-cbw" firstAttribute="leading" secondItem="Dhb-Mb-Ys9" secondAttribute="leading" constant="8" id="TQa-xE-CFh"/>
                                             <constraint firstAttribute="trailing" secondItem="REy-wN-hCT" secondAttribute="trailing" constant="8" id="Wth-UM-FRR"/>
                                             <constraint firstItem="eGk-mz-Hy7" firstAttribute="leading" secondItem="4cm-Jz-btF" secondAttribute="trailing" constant="10" id="agP-eh-pYn"/>
+                                            <constraint firstItem="68z-L1-1X2" firstAttribute="leading" secondItem="v6e-Sb-uxg" secondAttribute="leading" id="jEu-Y7-XmC"/>
                                             <constraint firstItem="v6e-Sb-uxg" firstAttribute="leading" secondItem="Dhb-Mb-Ys9" secondAttribute="leading" constant="8" id="krD-Gz-VIc"/>
+                                            <constraint firstItem="68z-L1-1X2" firstAttribute="trailing" secondItem="gAb-nd-bU2" secondAttribute="trailing" id="p21-em-vQ8"/>
                                             <constraint firstItem="eGk-mz-Hy7" firstAttribute="baseline" secondItem="4cm-Jz-btF" secondAttribute="baseline" id="rZs-Zb-LJi"/>
                                             <constraint firstItem="REy-wN-hCT" firstAttribute="leading" secondItem="Dhb-Mb-Ys9" secondAttribute="leading" constant="8" id="swm-Xb-zRw"/>
                                             <constraint firstItem="gAb-nd-bU2" firstAttribute="centerY" secondItem="v6e-Sb-uxg" secondAttribute="centerY" constant="4.5" id="teO-5L-Fac"/>
@@ -148,6 +226,7 @@
                                                 <exclude reference="v6e-Sb-uxg"/>
                                                 <exclude reference="4cm-Jz-btF"/>
                                                 <exclude reference="gAb-nd-bU2"/>
+                                                <exclude reference="68z-L1-1X2"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="93M-zX-J8d"/>
@@ -159,6 +238,9 @@
                                                 <exclude reference="MnW-dO-C5m"/>
                                                 <exclude reference="P6D-az-7rB"/>
                                                 <exclude reference="krD-Gz-VIc"/>
+                                                <exclude reference="O2f-1S-lkF"/>
+                                                <exclude reference="jEu-Y7-XmC"/>
+                                                <exclude reference="p21-em-vQ8"/>
                                                 <exclude reference="DKy-Zv-sVB"/>
                                                 <exclude reference="FgK-v1-JCP"/>
                                                 <exclude reference="agP-eh-pYn"/>
@@ -176,6 +258,7 @@
                                                 <include reference="v6e-Sb-uxg"/>
                                                 <include reference="4cm-Jz-btF"/>
                                                 <include reference="gAb-nd-bU2"/>
+                                                <include reference="68z-L1-1X2"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="93M-zX-J8d"/>
@@ -187,6 +270,9 @@
                                                 <include reference="MnW-dO-C5m"/>
                                                 <include reference="P6D-az-7rB"/>
                                                 <include reference="krD-Gz-VIc"/>
+                                                <include reference="O2f-1S-lkF"/>
+                                                <include reference="jEu-Y7-XmC"/>
+                                                <include reference="p21-em-vQ8"/>
                                                 <include reference="DKy-Zv-sVB"/>
                                                 <include reference="FgK-v1-JCP"/>
                                                 <include reference="agP-eh-pYn"/>
@@ -265,6 +351,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bXJ-zF-2Rx"/>
                     <connections>
+                        <outlet property="collectionPhotos" destination="68z-L1-1X2" id="Ogq-Qd-a7a"/>
                         <outlet property="imgAvatar" destination="jQ2-31-cbw" id="26M-uQ-tkh"/>
                         <outlet property="txtName" destination="REy-wN-hCT" id="b7n-6N-vae"/>
                     </connections>

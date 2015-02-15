@@ -14,6 +14,8 @@
 @property (weak) IBOutlet UITextField *txtName;
 @property (weak) IBOutlet UIImageView *imgAvatar;
 
+@property (weak) IBOutlet UICollectionView *collectionPhotos;
+
 - (IBAction)deleteAvatar:(id)sender;
 - (IBAction)changeAvatar:(id)sender;
 

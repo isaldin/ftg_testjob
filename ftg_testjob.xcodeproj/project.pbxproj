@@ -14,6 +14,7 @@
 		AC019A541A90C70D008622F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC019A531A90C70D008622F9 /* Images.xcassets */; };
 		AC019A571A90C70D008622F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC019A551A90C70D008622F9 /* LaunchScreen.xib */; };
 		AC019A631A90C70D008622F9 /* ftg_testjobTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC019A621A90C70D008622F9 /* ftg_testjobTests.m */; };
+		AC019A721A90F56D008622F9 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC019A711A90F56D008622F9 /* PhotoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		AC019A5C1A90C70D008622F9 /* ftg_testjobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ftg_testjobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC019A611A90C70D008622F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC019A621A90C70D008622F9 /* ftg_testjobTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ftg_testjobTests.m; sourceTree = "<group>"; };
+		AC019A701A90F56D008622F9 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		AC019A711A90F56D008622F9 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +84,7 @@
 		AC019A451A90C70D008622F9 /* ftg_testjob */ = {
 			isa = PBXGroup;
 			children = (
-				AC019A6C1A90E876008622F9 /* Models */,
+				AC019A6C1A90E876008622F9 /* Cells */,
 				AC019A4A1A90C70D008622F9 /* AppDelegate.h */,
 				AC019A4B1A90C70D008622F9 /* AppDelegate.m */,
 				AC019A4D1A90C70D008622F9 /* ViewController.h */,
@@ -120,11 +123,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AC019A6C1A90E876008622F9 /* Models */ = {
+		AC019A6C1A90E876008622F9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AC019A701A90F56D008622F9 /* PhotoCollectionViewCell.h */,
+				AC019A711A90F56D008622F9 /* PhotoCollectionViewCell.m */,
 			);
-			name = Models;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC019A4F1A90C70D008622F9 /* ViewController.m in Sources */,
+				AC019A721A90F56D008622F9 /* PhotoCollectionViewCell.m in Sources */,
 				AC019A4C1A90C70D008622F9 /* AppDelegate.m in Sources */,
 				AC019A491A90C70D008622F9 /* main.m in Sources */,
 			);

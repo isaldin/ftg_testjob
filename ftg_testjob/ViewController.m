@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "PhotoCollectionViewCell.h"
+
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableArray *arrPickedPhotos;
@@ -72,14 +74,38 @@
     {
         [self.arrPickedPhotos addObject:info[UIImagePickerControllerEditedImage]];
         
-        /// TODO: reload collection view at completion
-        [picker dismissViewControllerAnimated:YES completion:NULL];
+        [picker dismissViewControllerAnimated:YES completion:^{
+            [self.collectionPhotos reloadData];
+        }];
     }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+#pragma mark photos collection delegate and datasource methods
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    
+    return [self.arrPickedPhotos count];
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCellReuseID" forIndexPath:indexPath];
+    
+    cell.imgPhoto.image = self.arrPickedPhotos[indexPath.row];
+    return cell;
     
 }
 
