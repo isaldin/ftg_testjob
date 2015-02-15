@@ -10,6 +10,8 @@
 
 #import "PhotoCollectionViewCell.h"
 
+#import "APIClient.h"
+
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableArray *arrPickedPhotos;
@@ -111,6 +113,35 @@
     };
     return cell;
     
+}
+
+#pragma mark -- create event
+- (IBAction)postEvent:(id)sender
+{
+    [self btnActionPostEvent];
+}
+
+- (void)btnActionPostEvent
+{
+    NSDictionary *params = @{@"event":
+                                 @{
+                                     @"title": self.txtName.text,
+                                     @"tags": @[
+                                              @{
+                                                  @"tag": @"Deep House"
+                                              },
+                                              @{
+                                                  @"tag": @"Free entrance"
+                                              }
+                                              ],
+                                     @"description": @"In a mobile #iOS #application, users expect your apps to respond...",
+                                     @"coordinates": @"50.035895,36.234747",
+                                     @"date_start": @"2014-04-14T02:15:15+000000",
+                                     @"date_end": @"2015-04-14T05:18:15+000000",
+                                     @"privacy" : @"all"
+                                 }};
+    
+    [[APIClient sharedClient] postEventInfo:params];
 }
 
 #pragma mark --

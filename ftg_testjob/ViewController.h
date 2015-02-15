@@ -21,5 +21,7 @@
 
 - (IBAction)addPhoto:(id)sender;
 
+- (IBAction)postEvent:(id)sender;
+
 @end
 
